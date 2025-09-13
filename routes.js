@@ -9,7 +9,7 @@ router.get('/creators', (req, res) => {
   try {
     res.json([]);
   } catch (error) {
-    res.status(500).json({ message: 'Internal Server Error' });
+    res.status(500).json({ message: 'Internal Server Error', error: error.message });
   }
 });
 
@@ -21,11 +21,11 @@ router.post('/creators', (req, res) => {
     const creatorData = req.body;
     // Validate input data (example validation)
     if (!creatorData.name || !creatorData.email) {
-      return res.status(400).json({ message: 'Missing required fields' });
+      return res.status(400).json({ message: 'Missing required fields: name and email are required' });
     }
     res.status(201).send();
   } catch (error) {
-    res.status(500).json({ message: 'Internal Server Error' });
+    res.status(500).json({ message: 'Internal Server Error', error: error.message });
   }
 });
 
