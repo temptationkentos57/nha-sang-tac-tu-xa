@@ -7,9 +7,9 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.send('Chào mừng đến với Nha Sáng Tác Từ Xa!');
+  res.send('Welcome to Remote Creative Collaboration!');
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is running trên http://localhost:${PORT}`);
+  console.log(`Server is running at http://localhost:${PORT}`);
 });
