@@ -5,13 +5,23 @@ const router = express.Router();
 // Route để lấy danh sách nhà sáng tạo
 router.get('/creators', (req, res) => {
   // TODO: Logic để lấy danh sách nhà sáng tạo từ database
-  res.json([]);
+  // Add error handling placeholder
+  try {
+    res.json([]);
+  } catch (error) {
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
 });
 
 // Route để thêm nhà sáng tạo
 router.post('/creators', (req, res) => {
   // TODO: Logic để thêm nhà sáng tạo vào database
-  res.status(201).send();
+  // Add error handling placeholder
+  try {
+    res.status(201).send();
+  } catch (error) {
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
 });
 
 module.exports = router;
