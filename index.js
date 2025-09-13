@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.send('Welcome to Remote Creative Collaboration!');
+  res.send('Welcome to Remote Collaborative Creativity!');
 });
 
 app.listen(PORT, () => {
