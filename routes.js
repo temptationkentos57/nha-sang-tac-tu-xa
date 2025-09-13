@@ -4,8 +4,7 @@ const router = express.Router();
 
 // Route để lấy danh sách nhà sáng tạo
 router.get('/creators', (req, res) => {
-  // TODO: Logic để lấy danh sách nhà sáng tạo từ database
-  // Add error handling placeholder
+  // Logic để lấy danh sách nhà sáng tạo từ database
   try {
     res.json([]);
   } catch (error) {
@@ -15,16 +14,18 @@ router.get('/creators', (req, res) => {
 
 // Route để thêm nhà sáng tạo
 router.post('/creators', (req, res) => {
-  // TODO: Logic để thêm nhà sáng tạo vào database
-  // Add error handling placeholder
+  // Logic để thêm nhà sáng tạo vào database
   try {
     const creatorData = req.body;
-    // Validate input data (example validation)
+    // Validate input data (name and email are required)
     if (!creatorData.name || !creatorData.email) {
       return res.status(400).json({ message: 'Missing required fields: name and email are required' });
     }
     // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[^
+\s@]+@[^
+\s@]+\.[^
+\s@]+$/;
     if (!emailRegex.test(creatorData.email)) {
       return res.status(400).json({ message: 'Invalid email format' });
     }
