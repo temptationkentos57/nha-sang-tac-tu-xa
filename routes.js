@@ -18,6 +18,11 @@ router.post('/creators', (req, res) => {
   // TODO: Logic để thêm nhà sáng tạo vào database
   // Add error handling placeholder
   try {
+    const creatorData = req.body;
+    // Validate input data (example validation)
+    if (!creatorData.name || !creatorData.email) {
+      return res.status(400).json({ message: 'Missing required fields' });
+    }
     res.status(201).send();
   } catch (error) {
     res.status(500).json({ message: 'Internal Server Error' });
