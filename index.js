@@ -7,6 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
+  res.header('Content-Type', 'text/plain');
   res.send('Welcome to Remote Collaborative Creativity!');
 });
 
