@@ -22,10 +22,7 @@ router.post('/creators', (req, res) => {
       return res.status(400).json({ message: 'Missing required fields: name and email are required' });
     }
     // Validate email format
-    const emailRegex = /^[^
-\s@]+@[^
-\s@]+\.[^
-\s@]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(creatorData.email)) {
       return res.status(400).json({ message: 'Invalid email format' });
     }
