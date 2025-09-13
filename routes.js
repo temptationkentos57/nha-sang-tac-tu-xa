@@ -26,7 +26,8 @@ router.post('/creators', (req, res) => {
     if (!emailRegex.test(creatorData.email)) {
       return res.status(400).json({ message: 'Invalid email format' });
     }
-    res.status(201).send();
+    // Logic to add creator to the database (mocked)
+    res.status(201).json({ message: 'Creator added successfully', creator: creatorData });
   } catch (error) {
     res.status(500).json({ message: 'Internal Server Error', error: error.message });
   }
