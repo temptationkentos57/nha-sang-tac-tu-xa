@@ -19,10 +19,10 @@ router.post('/creators', (req, res) => {
     const creatorData = req.body;
     // Validate input data (name and email are required)
     if (!creatorData.name || !creatorData.email) {
-      return res.status(400).json({ message: 'Missing required fields: name and email are required' });
+      return res.status(400).json({ message: 'Missing required fields: name and email are mandatory' });
     }
     // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[^\s@]+@[^[\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(creatorData.email)) {
       return res.status(400).json({ message: 'Invalid email format' });
     }
